@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Cinzel:wght@600;700;800;900&display=swap');
+
+:root {
+  --primary-500: #F59E0B;
+  --primary-600: #D97706;
+  --royal-500: #8B5CF6;
+  --royal-600: #7C3AED;
+  --bg-app: #0B0F19;
+  --bg-card: #0F172A;
+  --border-color: #1E293B;
+  --border-hover: #334155;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-size: 14.5px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.vedic-font {
+  font-family: 'Cinzel', serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
