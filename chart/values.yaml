@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: vgurukool/gaja-lakshmi
+  repository: ayusing/gaja-lakshmi
   pullPolicy: IfNotPresent
   tag: "latest"
 
