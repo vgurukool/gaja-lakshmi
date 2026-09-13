@@ -10,7 +10,7 @@ import { AddRoleModal } from './components/AddRoleModal';
 import { AddAccoladeModal } from './components/AddAccoladeModal';
 import { AIChatModal } from './components/AIChatModal';
 
-export function App() {
+export function App({ keycloak }) {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [state, setState] = useState({
     leadershipRoles: [],
@@ -102,6 +102,7 @@ export function App() {
       {/* Main Content Area */}
       <div style={{ flex: 1, marginLeft: '270px', display: 'flex', flexDirection: 'column', minWidth: 0 }}>
         <Header
+          keycloak={keycloak}
           activeTab={activeTab}
           metrics={state.metrics}
           onOpenAddRole={() => setIsAddRoleOpen(true)}

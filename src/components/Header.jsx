@@ -1,7 +1,7 @@
 import React from 'react';
 import { Crown, Sparkles, ShieldCheck } from 'lucide-react';
 
-export function Header({ activeTab, metrics = {}, onOpenAddRole }) {
+export function Header({ activeTab, metrics = {}, onOpenAddRole, keycloak }) {
   const titles = {
     dashboard: 'Royal Sovereignty & Executive Overview',
     leadership: 'Rājya & Prabhutva — Executive Command & Governance',
@@ -47,7 +47,7 @@ export function Header({ activeTab, metrics = {}, onOpenAddRole }) {
         </div>
       </div>
 
-      {/* Right Stats Chip */}
+      {/* Right Stats Chip & User info */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <div style={{
           display: 'flex',
@@ -64,6 +64,30 @@ export function Header({ activeTab, metrics = {}, onOpenAddRole }) {
           <span style={{ color: '#64748B' }}>•</span>
           <span style={{ color: '#A78BFA' }}>🛡️ Team: {metrics.totalTeamCommanded || 190} Commanded</span>
         </div>
+
+        {keycloak && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginLeft: '10px', paddingLeft: '10px', borderLeft: '1px solid #334155' }}>
+            <span style={{ fontSize: '12px', color: '#38BDF8', fontWeight: 600 }}>
+              👤 {keycloak.tokenParsed?.preferred_username || 'user'}
+            </span>
+            <button
+              onClick={() => keycloak.logout({ redirectUri: window.location.origin })}
+              title="Sign Out of Keycloak SSO"
+              style={{
+                background: '#EF4444',
+                border: 'none',
+                padding: '5px 10px',
+                borderRadius: '6px',
+                color: 'white',
+                fontSize: '11px',
+                fontWeight: 600,
+                cursor: 'pointer'
+              }}
+            >
+              Sign Out
+            </button>
+          </div>
+        )}
       </div>
     </header>
   );
